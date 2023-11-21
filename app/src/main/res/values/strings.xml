@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">午未羊鲜</string>
+    <string name="launch_des">一口喝到新鲜</string>
+    <string name="login">登录</string>
+    <string name="login_title">登录注册</string>
+    <string name="login_input_code">请输入短信验证码</string>
+    <string name="login_input_phone">请输入您的手机号</string>
+    <string name="login_get_code">获取验证码</string>
+    <string name="login_agree">我已阅读并同意《用户协议》和《隐私政策》</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
