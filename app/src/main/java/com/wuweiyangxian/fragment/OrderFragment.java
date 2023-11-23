@@ -1,14 +1,28 @@
 package com.wuweiyangxian.fragment;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 
 import com.wuweiyangxian.R;
+import com.wuweiyangxian.adapter.OrderTitleAdapter;
+import com.wuweiyangxian.bean.OrderTitleBean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,8 +31,13 @@ import com.wuweiyangxian.R;
  */
 public class OrderFragment extends Fragment {
 
+    private RecyclerView rv_title;
+    private ImageView iv_screen;
+    private LinearLayout ll_order_top;
+    private List<OrderTitleBean> listTitle;
+    private OrderTitleAdapter adapter;
+
     public OrderFragment() {
-        // Required empty public constructor
     }
 
     public static OrderFragment newInstance() {
@@ -31,10 +50,111 @@ public class OrderFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false);
+        View inflate = inflater.inflate(R.layout.fragment_order, container, false);
+        initList();
+        ll_order_top = inflate.findViewById(R.id.ll_order_top);
+        rv_title = inflate.findViewById(R.id.rv_title);
+        iv_screen = inflate.findViewById(R.id.iv_screen);
+        adapter = new OrderTitleAdapter(getContext());
+        rv_title.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        rv_title.setAdapter(adapter);
+        adapter.setData(listTitle);
+        adapterClick();
+        initPop();
+        return inflate;
+    }
+
+    private void initPop() {
+        iv_screen.setOnClickListener(new View.OnClickListener() {
+            private PopupWindow popupWindow;
+            @Override
+            public void onClick(View view) {
+                View popupWindow_view = getLayoutInflater().inflate(R.layout.order_pop, null,false);
+                // 创建PopupWindow实例,200,LayoutParams.MATCH_PARENT分别是宽度和高度
+                popupWindow =  new PopupWindow(popupWindow_view,ViewGroup.LayoutParams.MATCH_PARENT , ViewGroup.LayoutParams.WRAP_CONTENT, true);
+                //设置可以获取焦点
+                popupWindow.setFocusable(true);
+                //设置可以触摸弹出框以外的区域
+                popupWindow.setOutsideTouchable(true);
+                //放在具体控件下方
+                popupWindow.showAsDropDown(ll_order_top,Gravity.CENTER,Gravity.RIGHT);
+                // 这里是位置显示方式,在屏幕的侧
+//                popupWindow.showAtLocation(iv_screen, Gravity.BOTTOM, 0, 0);
+                // 点击其他地方消失
+                //！！重要注意-如果这里写完依旧无效！那么按照下面“常见问题”的第一条重新编写此处代码！！
+                popupWindow_view.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (popupWindow != null && popupWindow.isShowing()) {
+                            popupWindow.dismiss();
+                            popupWindow = null;
+                        }
+                        return false;
+                    }
+                });
+
+
+            }
+        });
+    }
+
+    /**
+     * 改变背景颜色
+     */
+    private void darkenBackground(Float bgcolor){
+        WindowManager.LayoutParams lp = getActivity().getWindow().getAttributes();
+        lp.alpha = bgcolor;
+
+        getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        getActivity().getWindow().setAttributes(lp);
+
+    }
+
+    private void adapterClick() {
+        adapter.setOnItemClickListener(new OrderTitleAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                for (int i = 0; i < listTitle.size(); i++) {
+                    if (i == position){
+                        listTitle.get(i).setSelect(true);
+                    }else {
+                        listTitle.get(i).setSelect(false);
+                    }
+                }
+
+                adapter.setData(listTitle);
+            }
+        });
+    }
+
+    private void initList() {
+        listTitle = new ArrayList<OrderTitleBean>();
+        for (int i = 0; i < 6; i++) {
+            OrderTitleBean bean = new OrderTitleBean();
+            if (i == 0){
+                bean.setName("全部");
+                bean.setSelect(true);
+            } else if (i == 1) {
+                bean.setName("待接单 (2)");
+                bean.setSelect(false);
+            } else if (i == 2) {
+                bean.setName("待出餐 (0)");
+                bean.setSelect(false);
+            } else if (i == 3) {
+                bean.setName("待取餐 (6)");
+                bean.setSelect(false);
+            } else if (i == 4) {
+                bean.setName("待收货 (2)");
+                bean.setSelect(false);
+            } else if (i == 4) {
+                bean.setName("待自提 (2)");
+                bean.setSelect(false);
+            }
+            listTitle.add(bean);
+        }
     }
 }

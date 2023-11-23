@@ -1,14 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.OrderFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
+        android:id="@+id/ll_order_top"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:paddingBottom="@dimen/dp_5">
 
-</FrameLayout>
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_38"
+            android:layout_weight="8"
+            android:drawableLeft="@mipmap/icon_order_search"
+            android:gravity="center_vertical"
+            android:hint="@string/search_order"
+            android:paddingStart="@dimen/dp_12"
+            android:textColor="@color/black"
+            android:textColorHint="@color/gray_cc"
+            android:textSize="@dimen/sp_14"
+            app:bl_corners_radius="@dimen/dp_70"
+            app:bl_solid_color="@color/white_93_f8" />
+
+        <ImageView
+            android:id="@+id/iv_screen"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_order_screen" />
+
+        <TextView
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginStart="@dimen/dp_12"
+            android:gravity="center"
+            android:text="核销"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            app:bl_corners_radius="@dimen/dp_4"
+            app:bl_solid_color="@color/red_e6" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_20"
+        android:scrollbars="none" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+
+</LinearLayout>

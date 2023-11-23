@@ -7,6 +7,37 @@
     <string name="login_input_phone">请输入您的手机号</string>
     <string name="login_get_code">获取验证码</string>
     <string name="login_agree">我已阅读并同意《用户协议》和《隐私政策》</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">首页</string>
+    <string name="order">订单</string>
+    <string name="message">消息</string>
+    <string name="mine">我的</string>
+    <string name="home_title">午未羊鲜天鸿店</string>
+
+    <string name="home_shop_warning">店铺预警</string>
+    <string name="home_shop_manage">店铺管理</string>
+    <string name="all">全部</string>
+    <string name="today_money">今日营业额</string>
+    <string name="number">32,232.33</string>
+    <string name="toady_order_number">今日订单数</string>
+    <string name="toady_customer">今日回头客</string>
+    <string name="paving_manager">铺面管理</string>
+    <string name="staff_manager">员工管理</string>
+    <string name="monitor_manager">监控管理</string>
+    <string name="wallet_manager">钱包管理</string>
+    <string name="goods_manager">商品管理</string>
+    <string name="food_manager">食材管理</string>
+    <string name="inventory_manager">库存管理</string>
+    <string name="procure_manager">采购管理</string>
+    <string name="write_off_manager">核销管理</string>
+    <string name="invoice_manager">发票管理</string>
+    <string name="evaluate_manager">评价管理</string>
+    <string name="custom_manager">客户管理</string>
+
+    <string name="search_order">搜索订单</string>
+    <string name="place_order_time">下单时间</string>
+    <string name="today">今天</string>
+    <string name="yesterday">昨天</string>
+    <string name="last_7_days">近7天</string>
+    <string name="last_30_days">近30天</string>
+    <string name="select_date">选择日期</string>
 </resources>

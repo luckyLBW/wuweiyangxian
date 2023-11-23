@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,12 +16,12 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_60"
         android:layout_alignParentBottom="true"
-        android:elevation="@dimen/dp_4"
         android:background="@color/white"
+        android:elevation="@dimen/dp_4"
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/home"
+            android:id="@+id/tv_home"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -30,12 +29,25 @@
             android:drawableTop="@mipmap/icon_home_select"
             android:drawablePadding="@dimen/dp_2"
             android:gravity="center"
-            android:text="首页"
-            android:textColor="@color/black18"
+            android:text="@string/home"
+            android:textColor="@color/red_e5"
             android:textSize="@dimen/sp_12" />
 
         <TextView
-            android:id="@+id/message"
+            android:id="@+id/tv_order"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:drawableTop="@mipmap/icon_order"
+            android:drawablePadding="@dimen/dp_2"
+            android:gravity="center"
+            android:text="@string/order"
+            android:textColor="@color/black_99"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_message"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -43,38 +55,12 @@
             android:drawableTop="@mipmap/icon_message"
             android:drawablePadding="@dimen/dp_2"
             android:gravity="center"
-            android:text="消息"
-            android:textColor="@color/black_70_18"
+            android:text="@string/message"
+            android:textColor="@color/black_99"
             android:textSize="@dimen/sp_12" />
 
         <TextView
-            android:id="@+id/shop"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/icon_shop"
-            android:drawablePadding="@dimen/dp_2"
-            android:gravity="center"
-            android:text="商城"
-            android:textColor="@color/black_70_18"
-            android:textSize="@dimen/sp_12" />
-
-        <TextView
-            android:id="@+id/shop_cart"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:drawableTop="@mipmap/icon_shop_cart"
-            android:drawablePadding="@dimen/dp_2"
-            android:gravity="center"
-            android:text="购物车"
-            android:textColor="@color/black_70_18"
-            android:textSize="@dimen/sp_12" />
-
-        <TextView
-            android:id="@+id/mine"
+            android:id="@+id/tv_mine"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -82,8 +68,8 @@
             android:drawableTop="@mipmap/icon_mine"
             android:drawablePadding="@dimen/dp_2"
             android:gravity="center"
-            android:text="我的"
-            android:textColor="@color/black_70_18"
+            android:text="@string/mine"
+            android:textColor="@color/black_99"
             android:textSize="@dimen/sp_12" />
     </LinearLayout>
 

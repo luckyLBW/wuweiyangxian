@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:paddingBottom="@dimen/dp_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/place_order_time"
+            android:textColor="@color/black_33"
+            android:textSize="@dimen/sp_14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/today"
+                android:textColor="@color/black_66"
+                android:textSize="@dimen/sp_12"
+                app:bl_corners_radius="@dimen/dp_24"
+                app:bl_selected_solid_color="@color/red_10_e6"
+                app:bl_selected_textColor="@color/red_e6"
+                app:bl_unSelected_solid_color="@color/gray_f5"
+                app:bl_unSelected_textColor="@color/black_66" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/yesterday"
+                android:textColor="@color/black_66"
+                android:textSize="@dimen/sp_12"
+                app:bl_corners_radius="@dimen/dp_24"
+                app:bl_selected_solid_color="@color/red_10_e6"
+                app:bl_selected_textColor="@color/red_e6"
+                app:bl_unSelected_solid_color="@color/gray_f5"
+                app:bl_unSelected_textColor="@color/black_66" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_28"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/last_7_days"
+                android:textColor="@color/black_66"
+                android:textSize="@dimen/sp_12"
+                app:bl_corners_radius="@dimen/dp_24"
+                app:bl_selected_solid_color="@color/red_10_e6"
+                app:bl_selected_textColor="@color/red_e6"
+                app:bl_unSelected_solid_color="@color/gray_f5"
+                app:bl_unSelected_textColor="@color/black_66" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_28"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/last_30_days"
+                android:textColor="@color/black_66"
+                android:textSize="@dimen/sp_12"
+                app:bl_corners_radius="@dimen/dp_24"
+                app:bl_selected_solid_color="@color/red_10_e6"
+                app:bl_selected_textColor="@color/red_e6"
+                app:bl_unSelected_solid_color="@color/gray_f5"
+                app:bl_unSelected_textColor="@color/black_66" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/select_date"
+            android:textColor="@color/black_33"
+            android:textSize="@dimen/sp_14" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_28"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2023-04-05"
+                android:textColor="@color/black_66"
+                android:textSize="@dimen/sp_12"
+                app:bl_corners_radius="@dimen/dp_24"
+                app:bl_solid_color="@color/gray_f5" />
+
+            <View
+                android:layout_width="@dimen/dp_12"
+                android:layout_height="@dimen/dp_2"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_8"
+                android:background="@color/gray_cc" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_28"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2023-11-20"
+                android:textColor="@color/black_66"
+                android:textSize="@dimen/sp_12"
+                app:bl_corners_radius="@dimen/dp_24"
+                app:bl_solid_color="@color/gray_f5" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black20" />
+</LinearLayout>

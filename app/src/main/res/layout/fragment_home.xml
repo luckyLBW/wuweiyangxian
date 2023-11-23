@@ -1,14 +1,361 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray_f9"
+    android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="@dimen/dp_44"
+        android:background="@color/white"
+        android:drawableLeft="@mipmap/icon_home_shop"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_12"
+        android:text="@string/home_title"
+        android:textColor="@color/black_33"
+        android:textSize="@dimen/sp_18" />
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/dp_40">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_130"
+                android:layout_margin="@dimen/dp_12"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@mipmap/icon_home_today_money"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_marginEnd="@dimen/dp_12"
+                        android:drawableEnd="@mipmap/icon_white_right_back"
+                        android:text="@string/today_money"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12"
+                        tools:ignore="UseCompatTextViewDrawableXml" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_12"
+                        android:layout_marginTop="@dimen/dp_12"
+                        android:layout_marginEnd="@dimen/dp_12"
+                        android:text="@string/number"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_26"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_9"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:background="@mipmap/icon_home_order_number">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/dp_12"
+                            android:text="@string/toady_order_number"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/dp_12"
+                            android:layout_marginEnd="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:drawableEnd="@mipmap/icon_white_right_back"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="328"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_20" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:layout_weight="1"
+                        android:background="@mipmap/icon_home_customer_number">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/dp_12"
+                            android:text="@string/toady_customer"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/dp_12"
+                            android:layout_marginEnd="@dimen/dp_12"
+                            android:layout_weight="1"
+                            android:drawableEnd="@mipmap/icon_white_right_back"
+                            android:maxLines="1"
+                            android:singleLine="true"
+                            android:text="19"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_20" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:text="@string/home_shop_warning"
+                    android:textColor="@color/black_33"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp_12"
+                    android:drawableRight="@mipmap/icon_gray_right_back"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:text="@string/all" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:orientation="vertical"
+                android:overScrollMode="never"
+                android:paddingBottom="@dimen/dp_12"
+                android:scrollbars="none"
+                app:bl_corners_radius="@dimen/dp_8"
+                app:bl_solid_color="@color/white" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:text="@string/home_shop_manage"
+                    android:textColor="@color/black_33"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp_12"
+                    android:drawableRight="@mipmap/icon_gray_right_back"
+                    android:drawablePadding="@dimen/dp_4"
+                    android:text="@string/all" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dp_16"
+                app:bl_corners_radius="@dimen/dp_8"
+                app:bl_solid_color="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_54"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_paving_manager"
+                        android:gravity="center"
+                        android:text="@string/paving_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_staff_manager"
+                        android:gravity="center"
+                        android:text="@string/staff_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_monitor_manager"
+                        android:gravity="center"
+                        android:text="@string/monitor_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_wallet_manager"
+                        android:gravity="center"
+                        android:text="@string/wallet_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_54"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_goods_manager"
+                        android:gravity="center"
+                        android:text="@string/goods_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_food_manager"
+                        android:gravity="center"
+                        android:text="@string/food_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_inventory_manager"
+                        android:gravity="center"
+                        android:text="@string/inventory_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_procure_manager"
+                        android:gravity="center"
+                        android:text="@string/procure_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_54"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_write_off_manager"
+                        android:gravity="center"
+                        android:text="@string/write_off_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_invoice_manager"
+                        android:gravity="center"
+                        android:text="@string/invoice_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_evaluate_manager"
+                        android:gravity="center"
+                        android:text="@string/evaluate_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableTop="@mipmap/icon_custom_manager"
+                        android:gravity="center"
+                        android:text="@string/custom_manager"
+                        android:textColor="@color/black_99"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
