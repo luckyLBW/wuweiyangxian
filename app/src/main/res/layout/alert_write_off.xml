@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_364"
+    android:orientation="vertical"
+    app:bl_corners_topLeftRadius="@dimen/dp_26"
+    app:bl_corners_topRightRadius="@dimen/dp_26"
+    app:bl_solid_color="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:text="取消"
+            android:textColor="@color/black_33"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:text="确认"
+            android:textColor="@color/red_e6"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_40"
+        android:layout_marginEnd="@dimen/dp_16"
+        android:inputType="number"
+        android:maxLength="11"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black_66"
+        android:textSize="@dimen/sp_14"
+        app:bl_corners_radius="@dimen/dp_24"
+        app:bl_solid_color="@color/gray_f5" />
+</LinearLayout>

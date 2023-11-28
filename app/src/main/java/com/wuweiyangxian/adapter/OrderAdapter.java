@@ -16,6 +16,7 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -168,6 +169,15 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.viewHolder> 
             }
         });
 
+        holder.rl_content.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null) {
+                    listener.onItemClick(list.get(position).getState(), list.get(position).getTitle());
+                }
+            }
+        });
+
     }
 
     @Override
@@ -191,6 +201,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.viewHolder> 
         private final LinearLayout ll_receiving_orders;
         private final LinearLayout ll_order_verification;
         private final LinearLayout ll_delivery;
+        private final RecyclerView rv_content;
+        private final RelativeLayout rl_content;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
@@ -209,11 +221,13 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.viewHolder> 
             ll_receiving_orders = itemView.findViewById(R.id.ll_receiving_orders);
             ll_order_verification = itemView.findViewById(R.id.ll_order_verification);
             ll_delivery = itemView.findViewById(R.id.ll_delivery);
+            rv_content = itemView.findViewById(R.id.rv_content);
+            rl_content = itemView.findViewById(R.id.rl_content);
         }
     }
 
     public interface OnItemClickListener {
-        void onItemClick(int position);
+        void onItemClick(int state, String title);
     }
 
     private OnItemClickListener listener;

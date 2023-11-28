@@ -1,10 +1,5 @@
 package com.wuweiyangxian;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -13,12 +8,16 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.wuweiyangxian.activity.BaseActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.wuweiyangxian.app.App;
 import com.wuweiyangxian.fragment.HomeFragment;
 import com.wuweiyangxian.fragment.MessageFragment;
 import com.wuweiyangxian.fragment.MineFragment;
 import com.wuweiyangxian.fragment.OrderFragment;
+import com.wuweiyangxian.util.CheckPermissionsUtil;
 import com.wuweiyangxian.util.StatusBarUtil;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,7 +37,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        StatusBarUtil.setStatusBarColors(this,getColor(R.color.white));
+        StatusBarUtil.setStatusBarColors(this, getColor(R.color.white));
+
+        CheckPermissionsUtil checkPermissionsUtil = new CheckPermissionsUtil();
+        checkPermissionsUtil.checkPermissions(getBaseContext(), this);
 
         view_pager = findViewById(R.id.view_pager);
         home = findViewById(R.id.tv_home);
@@ -74,10 +76,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onNewIntent(intent);
         showFragment();
     }
+
     private void showFragment() {
         FragmentTransaction ft = fm.beginTransaction();
         int fragmentFlag = getIntent().getIntExtra("fragment_flag", 0);
-        switch (fragmentFlag){
+        switch (fragmentFlag) {
             case 0:
                 ft.hide(orderFragment)
                         .hide(messageFragment)
@@ -150,6 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * * 两次返回退出程序
      */
     private long firstTime = 0;
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         long secondTime = System.currentTimeMillis();
@@ -168,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         FragmentTransaction ft = fm.beginTransaction();
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.tv_home:
                 ft.hide(orderFragment)
                         .hide(messageFragment)

@@ -1,6 +1,7 @@
 package com.wuweiyangxian.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -10,12 +11,15 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wuweiyangxian.R;
+import com.wuweiyangxian.activity.OrderDetailActivity;
+import com.wuweiyangxian.activity.ZxingActivity;
 import com.wuweiyangxian.adapter.OrderAdapter;
 import com.wuweiyangxian.adapter.OrderTitleAdapter;
 import com.wuweiyangxian.bean.OrderBean;
@@ -34,6 +38,7 @@ public class OrderFragment extends Fragment {
     private RecyclerView rv_title;
     private RecyclerView rv_content;
     private ImageView iv_screen;
+    private TextView tv_write_off;
     private LinearLayout ll_order_top;
     private List<OrderTitleBean> listTitle;
     private OrderTitleAdapter adapter;
@@ -60,6 +65,7 @@ public class OrderFragment extends Fragment {
         View inflate = inflater.inflate(R.layout.fragment_order, container, false);
         initList();
         ll_order_top = inflate.findViewById(R.id.ll_order_top);
+        tv_write_off = inflate.findViewById(R.id.tv_write_off);
         rv_title = inflate.findViewById(R.id.rv_title);
         rv_content = inflate.findViewById(R.id.rv_content);
         iv_screen = inflate.findViewById(R.id.iv_screen);
@@ -125,6 +131,22 @@ public class OrderFragment extends Fragment {
                 }
                 adapter.setData(listTitle);
                 showDetails(position);
+            }
+        });
+
+        orderAdapter.setOnItemClickListener(new OrderAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int state, String title) {
+                startActivity(new Intent(getActivity(), OrderDetailActivity.class).putExtra("state", state).putExtra("title", title));
+            }
+        });
+
+        tv_write_off.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), ZxingActivity.class);
+                startActivityForResult(intent, 1003);
+
             }
         });
     }

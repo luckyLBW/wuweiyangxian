@@ -30,7 +30,8 @@
                 android:paddingTop="@dimen/dp_3"
                 android:paddingEnd="@dimen/dp_4"
                 android:paddingBottom="@dimen/dp_3"
-                android:text="外卖" />
+                android:text="外卖"
+                android:textSize="@dimen/sp_10" />
 
             <TextView
                 android:id="@+id/tv_name"
@@ -213,13 +214,16 @@
         </LinearLayout>
 
         <RelativeLayout
+            android:id="@+id/rl_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_16">
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_content"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_40" />
+                android:layout_height="@dimen/dp_40"
+                android:background="@color/red_e6" />
 
             <TextView
                 android:id="@+id/tv_num"

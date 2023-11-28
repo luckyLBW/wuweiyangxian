@@ -41,6 +41,7 @@
             android:src="@mipmap/icon_order_screen" />
 
         <TextView
+            android:id="@+id/tv_write_off"
             android:layout_width="@dimen/dp_48"
             android:layout_height="@dimen/dp_24"
             android:layout_marginStart="@dimen/dp_12"
