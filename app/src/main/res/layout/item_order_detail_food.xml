@@ -8,7 +8,7 @@
     <ImageView
         android:layout_width="@dimen/dp_64"
         android:layout_height="@dimen/dp_64"
-        android:src="@mipmap/icon_order_detail_food_img" />
+        android:src="@mipmap/icon_order_detail_icon" />
 
     <LinearLayout
         android:layout_width="match_parent"

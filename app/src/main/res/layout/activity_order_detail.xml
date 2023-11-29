@@ -839,5 +839,17 @@
                 app:bl_corners_radius="@dimen/dp_26"
                 app:bl_solid_color="@color/red_e6" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_contact_users"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="联系用户"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14"
+            android:visibility="gone"
+            app:bl_corners_radius="@dimen/dp_26"
+            app:bl_solid_color="@color/red_e6" />
     </LinearLayout>
 </RelativeLayout>

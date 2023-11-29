@@ -41,6 +41,7 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
     private TextView tv_des;
     private TextView tv_delivery;
     private TextView tv_good_time;
+    private TextView tv_contact_users;
     private TextView tv_name;
     private TextView tv_type;
     private ImageView iv_back;
@@ -66,6 +67,7 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
         tv_name = findViewById(R.id.tv_name);
         tv_title = findViewById(R.id.tv_title);
         tv_des = findViewById(R.id.tv_des);
+        tv_contact_users = findViewById(R.id.tv_contact_users);
         tv_delivery = findViewById(R.id.tv_delivery);
         tv_good_time = findViewById(R.id.tv_good_time);
         ll_button = findViewById(R.id.ll_button);
@@ -140,6 +142,18 @@ public class OrderDetailActivity extends BaseActivity implements View.OnClickLis
                 ll_address.setVisibility(View.GONE);
                 ll_delivery_fee.setVisibility(View.GONE);
                 tv_good_time.setVisibility(View.GONE);
+                break;
+            case 5:
+                //自提已完成
+                tv_name.setText("订单已完成");
+                tv_des.setText("用户取货码已核销完成");
+                ll_number_type.setVisibility(View.VISIBLE);
+                tv_contact_users.setVisibility(View.VISIBLE);
+                ll_distance.setVisibility(View.GONE);
+                ll_address.setVisibility(View.GONE);
+                ll_delivery_fee.setVisibility(View.GONE);
+                tv_good_time.setVisibility(View.GONE);
+                ll_to_be_served.setVisibility(View.GONE);
                 break;
         }
     }

@@ -1,6 +1,7 @@
 package com.wuweiyangxian.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
@@ -66,6 +67,13 @@ public class ZxingActivity extends BaseActivity implements QRCodeView.Delegate {
                     window.setGravity(Gravity.BOTTOM);
                 }
 
+            }
+        });
+
+        tv_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ZxingActivity.this,WriteOffActivity.class));
             }
         });
     }
