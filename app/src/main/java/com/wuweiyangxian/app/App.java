@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
+import com.wuweiyangxian.util.SpUtil;
+
 import java.util.Stack;
 
 public class App extends Application {
@@ -29,6 +31,10 @@ public class App extends Application {
 
     public static Context getContext() {
         return mInstance.getApplicationContext();
+    }
+
+    public String getToken() {
+        return SpUtil.getString("token", "");
     }
 
     /**
