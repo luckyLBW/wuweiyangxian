@@ -1,9 +1,9 @@
 package com.wuweiyangxian.net.factory;
 
-import com.blankj.utilcode.util.GsonUtils;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import com.wuweiyangxian.net.ResultEntity;
+import com.wuweiyangxian.util.GsonUtils;
 
 import java.io.IOException;
 

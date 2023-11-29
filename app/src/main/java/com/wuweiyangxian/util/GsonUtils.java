@@ -1,6 +1,4 @@
-package com.yunbianwuzhan.exhibit.util;
-
-import android.util.Log;
+package com.wuweiyangxian.util;
 
 import com.google.gson.Gson;
 
