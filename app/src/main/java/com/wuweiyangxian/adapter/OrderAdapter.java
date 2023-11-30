@@ -152,7 +152,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.viewHolder> 
             @Override
             public void onClick(View view) {
 
-                View alert = activity.getLayoutInflater().inflate(R.layout.order_alert, null, false);
+                View alert = activity.getLayoutInflater().inflate(R.layout.alert_order, null, false);
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setView(alert);
                 AlertDialog dialog = builder.create();

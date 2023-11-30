@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wuweiyangxian.R;
 import com.wuweiyangxian.activity.DataStatisticsActivity;
+import com.wuweiyangxian.activity.StoreWarningActivity;
 import com.wuweiyangxian.adapter.HomeShopAdapter;
 import com.wuweiyangxian.bean.HomeShopBean;
 import com.wuweiyangxian.util.StatusBarUtil;
@@ -26,9 +28,10 @@ import java.util.List;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment implements View.OnClickListener{
+public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private LinearLayout ll_number_statistics;
+    private TextView tv_store_warning;
     private RecyclerView rv_content;
     private HomeShopAdapter adapter;
     private List list;
@@ -55,6 +58,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         View inflate = inflater.inflate(R.layout.fragment_home, container, false);
         initList();
         ll_number_statistics = inflate.findViewById(R.id.ll_number_statistics);
+        tv_store_warning = inflate.findViewById(R.id.tv_store_warning);
         rv_content = inflate.findViewById(R.id.rv_content);
         View top_view = inflate.findViewById(R.id.top_view);
         ViewGroup.LayoutParams layoutParams = top_view.getLayoutParams();
@@ -67,6 +71,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
         adapter.setData(list);
 
         ll_number_statistics.setOnClickListener(this);
+        tv_store_warning.setOnClickListener(this);
         return inflate;
     }
 
@@ -101,10 +106,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.ll_number_statistics:
                 //跳转数据统计
                 startActivity(new Intent(getActivity(), DataStatisticsActivity.class));
+                break;
+            case R.id.tv_store_warning:
+                //跳转店铺预警
+                startActivity(new Intent(getActivity(), StoreWarningActivity.class));
                 break;
         }
     }

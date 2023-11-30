@@ -25,43 +25,48 @@
         android:theme="@style/Theme.Wuweiyangxian"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <!--数据统计-->
+        <!-- 预警设置 -->
+        <activity
+            android:name=".activity.WarningSettingsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <!-- 店铺预警 -->
+        <activity
+            android:name=".activity.StoreWarningActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 数据统计 -->
         <activity
             android:name=".activity.DataStatisticsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!--核销成功-->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 核销成功 -->
         <activity
             android:name=".activity.VerificationSuccessfulActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 核销记录 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 核销记录 -->
         <activity
             android:name=".activity.WriteOffActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 核销页面 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 核销页面 -->
         <activity
             android:name=".activity.ZxingActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 订单详情 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 订单详情 -->
         <activity
             android:name=".activity.OrderDetailActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 登录 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 登录 -->
         <activity
             android:name=".activity.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 启动页 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 启动页 -->
         <activity
             android:name=".activity.LaunchActivity"
             android:exported="true"
@@ -72,8 +77,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!-- 主页面 -->
+        </activity> <!-- 主页面 -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

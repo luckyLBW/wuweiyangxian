@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.StoreWarningActivity">
+
+    <include layout="@layout/base_item_title" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingTop="@dimen/dp_20"
+        android:scrollbars="none" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:overScrollMode="never"
+        android:paddingStart="@dimen/dp_12"
+        android:scrollbars="none" />
+
+    <TextView
+        android:id="@+id/tv_none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="暂无数据"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</LinearLayout>
