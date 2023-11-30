@@ -130,8 +130,9 @@
 
             <CheckBox
                 android:id="@+id/cb_is_select"
-                android:layout_width="@dimen/dp_15"
-                android:layout_height="@dimen/dp_15"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:background="@drawable/redio_check"
                 android:button="@null" />
 
             <TextView

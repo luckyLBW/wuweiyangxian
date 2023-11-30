@@ -20,10 +20,24 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.Wuweiyangxian"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <!--核销记录-->
+        <!--数据统计-->
+        <activity
+            android:name=".activity.DataStatisticsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!--核销成功-->
+        <activity
+            android:name=".activity.VerificationSuccessfulActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 核销记录 -->
         <activity
             android:name=".activity.WriteOffActivity"
             android:exported="false"
@@ -58,7 +72,8 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- 主页面 -->
+        </activity>
+        <!-- 主页面 -->
         <activity
             android:name=".MainActivity"
             android:exported="true"

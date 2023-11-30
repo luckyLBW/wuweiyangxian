@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">午未羊鲜</string>
-    <string name="launch_des">一口喝到新鲜</string>
+    <string name="launch_des">一 口 喝 到 新 鲜</string>
     <string name="login">登录</string>
     <string name="login_title">登录注册</string>
     <string name="login_input_code">请输入短信验证码</string>

@@ -7,7 +7,7 @@ public class ConstUtil {
     //演示版
 //    public static String httpUrl = "http://43.140.247.202:10010";
     //测试
-    public static String httpUrl = "http://127.0.0.1:1011/";
+    public static String httpUrl = "http://43.140.247.202:10303/";
     public static String webUrl = "http://43.140.247.202:10027/h5/#/";
     public static final String PHONE = "^1[3-9]\\d{9}$";
     //线上版

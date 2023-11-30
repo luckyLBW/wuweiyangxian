@@ -29,6 +29,7 @@
 
     <color name="red_e5">#E53935</color>
     <color name="red_e6">#E63A36</color>
+    <color name="red_ffb">#FFB4B2</color>
     <color name="red_10_e6">#10E63A36</color>
 
     <color name="yellow_ff_69">#FF6914</color>
@@ -43,4 +44,5 @@
 
     <color name="blue_02">#027ABC</color>
     <color name="blue_20_2e">#202EB4FF</color>
+    <color name="blue_32">#3277FF</color>
 </resources>

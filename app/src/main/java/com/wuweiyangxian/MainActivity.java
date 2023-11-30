@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.wuweiyangxian.activity.BaseActivity;
 import com.wuweiyangxian.app.App;
 import com.wuweiyangxian.fragment.HomeFragment;
 import com.wuweiyangxian.fragment.MessageFragment;
@@ -20,7 +21,7 @@ import com.wuweiyangxian.fragment.OrderFragment;
 import com.wuweiyangxian.util.CheckPermissionsUtil;
 import com.wuweiyangxian.util.StatusBarUtil;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private HomeFragment homeFragment;
     private OrderFragment orderFragment;
@@ -37,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        StatusBarUtil.setStatusBarColors(this, getColor(R.color.white));
 
         CheckPermissionsUtil checkPermissionsUtil = new CheckPermissionsUtil();
         checkPermissionsUtil.checkPermissions(getBaseContext(), this);

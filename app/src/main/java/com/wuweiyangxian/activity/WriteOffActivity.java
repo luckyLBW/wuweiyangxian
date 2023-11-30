@@ -1,9 +1,5 @@
 package com.wuweiyangxian.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.wuweiyangxian.R;
 import com.wuweiyangxian.adapter.OrderAdapter;
@@ -47,7 +46,7 @@ public class WriteOffActivity extends BaseActivity {
         iv_back.setImageResource(R.mipmap.icon_black_left_back);
 
         adapter = new WriteOffAdapter(getBaseContext(), WriteOffActivity.this);
-        rv_write_off.setLayoutManager(new LinearLayoutManager(getBaseContext(),RecyclerView.VERTICAL,false));
+        rv_write_off.setLayoutManager(new LinearLayoutManager(getBaseContext(), RecyclerView.VERTICAL, false));
         rv_write_off.setAdapter(adapter);
         initList();
         adapter.setData(list);

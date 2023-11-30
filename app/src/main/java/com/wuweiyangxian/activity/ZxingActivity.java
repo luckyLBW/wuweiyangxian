@@ -7,9 +7,9 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -55,14 +55,19 @@ public class ZxingActivity extends BaseActivity implements QRCodeView.Delegate {
         tv_write_off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(getBaseContext());
+                View dialogView = View.inflate(ZxingActivity.this, R.layout.alert_write_off, null);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ZxingActivity.this);
                 final AlertDialog dialog = builder.create();
-                View dialogView = View.inflate(getBaseContext(), R.layout.alert_write_off, null);
                 dialog.setView(dialogView);
                 dialog.show();
                 Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawableResource(R.color.transparent);
                 Window window = dialog.getWindow();
                 if (window != null) {
+                    window.setBackgroundDrawableResource(android.R.color.white);//设置背景透明
+                    WindowManager.LayoutParams lp = window.getAttributes();
+                    lp.gravity = Gravity.CENTER;
+                    lp.width = WindowManager.LayoutParams.MATCH_PARENT;//宽高可设置具体大小
+                    dialog.getWindow().setAttributes(lp);
                     window.setBackgroundDrawableResource(android.R.color.transparent);//设置背景透明
                     window.setGravity(Gravity.BOTTOM);
                 }
@@ -73,7 +78,7 @@ public class ZxingActivity extends BaseActivity implements QRCodeView.Delegate {
         tv_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ZxingActivity.this,WriteOffActivity.class));
+                startActivity(new Intent(ZxingActivity.this, WriteOffActivity.class));
             }
         });
     }
@@ -99,7 +104,7 @@ public class ZxingActivity extends BaseActivity implements QRCodeView.Delegate {
 
     @Override
     public void onScanQRCodeSuccess(String result) {
-        Toast.makeText(this, result.toString(), Toast.LENGTH_LONG).show();
+        startActivity(new Intent(ZxingActivity.this, VerificationSuccessfulActivity.class).putExtra("id", result));
         //扫描成功之后携带数据跳转页面
         finish();
     }

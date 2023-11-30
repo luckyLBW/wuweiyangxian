@@ -10,13 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wuweiyangxian.R;
-import com.wuweiyangxian.bean.OrderBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +26,7 @@ public class WriteOffAdapter extends RecyclerView.Adapter<WriteOffAdapter.viewHo
 
     private List<String> list;
 
-    public WriteOffAdapter(Context context,Activity activity) {
+    public WriteOffAdapter(Context context, Activity activity) {
         this.context = context;
         list = new ArrayList<>();
     }
@@ -41,7 +39,7 @@ public class WriteOffAdapter extends RecyclerView.Adapter<WriteOffAdapter.viewHo
     @NonNull
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(context).inflate(R.layout.item_write_off , null);
+        View inflate = LayoutInflater.from(context).inflate(R.layout.item_write_off, null);
         return new WriteOffAdapter.viewHolder(inflate);
     }
 
@@ -76,8 +74,8 @@ public class WriteOffAdapter extends RecyclerView.Adapter<WriteOffAdapter.viewHo
         holder.ll_write_off.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (listener != null){
-                    listener.onItemClick(5,"自提");
+                if (listener != null) {
+                    listener.onItemClick(5, "自提");
                 }
             }
         });

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,7 +13,6 @@ import android.widget.Toast;
 import com.alibaba.fastjson.JSON;
 import com.wuweiyangxian.MainActivity;
 import com.wuweiyangxian.R;
-import com.wuweiyangxian.bean.CodeBean;
 import com.wuweiyangxian.bean.LoginBean;
 import com.wuweiyangxian.bean.LoginResultBean;
 import com.wuweiyangxian.net.BaseRxObserver;
@@ -20,8 +20,6 @@ import com.wuweiyangxian.net.HttpUtil;
 import com.wuweiyangxian.net.ResultEntity;
 import com.wuweiyangxian.util.ConstUtil;
 import com.wuweiyangxian.util.SpUtil;
-
-import org.greenrobot.eventbus.EventBus;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
@@ -35,6 +33,7 @@ public class LoginActivity extends BaseActivity {
     private EditText et_login_phone;
     private EditText et_login_code;
     private TextView tv_register_get_code;
+    private CheckBox cb_is_select;
 
     private TimeCount time = new TimeCount(60 * 1000 + 300, 1000);
 
@@ -47,30 +46,32 @@ public class LoginActivity extends BaseActivity {
         tv_login = findViewById(R.id.tv_login);
         et_login_phone = findViewById(R.id.et_login_phone);
         et_login_code = findViewById(R.id.et_login_code);
+        cb_is_select = findViewById(R.id.cb_is_select);
         tv_register_get_code = findViewById(R.id.tv_register_get_code);
 
         tv_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                LoginBean bean = new LoginBean();
-                bean.setPhone(et_login_phone.getText().toString().trim());
-                bean.setCode(et_login_code.getText().toString().trim());
-                bean.setIs_keeplogin(true);
-                login(bean);
+                if (!cb_is_select.isChecked()) {
+                    Toast.makeText(getBaseContext(), "请先勾选我已阅读并同意《用户协议》和《隐私政策》", Toast.LENGTH_SHORT).show();
+                } else {
+                    LoginBean bean = new LoginBean();
+                    bean.setPhone(et_login_phone.getText().toString().trim());
+                    bean.setCode(et_login_code.getText().toString().trim());
+                    bean.setIs_keeplogin(true);
+                    login(bean);
+                }
             }
         });
 
         tv_register_get_code.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!ConstUtil.isMatcher(ConstUtil.PHONE, et_login_phone.getText().toString().trim())){
-                    Toast.makeText(getApplicationContext(),"手机号码格式错误！",Toast.LENGTH_LONG).show();
-                }else {
+                if (!ConstUtil.isMatcher(ConstUtil.PHONE, et_login_phone.getText().toString().trim())) {
+                    Toast.makeText(getApplicationContext(), "手机号码格式错误！", Toast.LENGTH_LONG).show();
+                } else {
                     //走接口
-                    CodeBean bean = new CodeBean();
-                    bean.setPhone(et_login_phone.getText().toString().trim());
-                    bean.setScene("login");
-                    getCode(bean);
+                    getCode(et_login_phone.getText().toString().trim());
                     time.start();
                 }
             }
@@ -84,18 +85,19 @@ public class LoginActivity extends BaseActivity {
                 .subscribe(new BaseRxObserver<ResultEntity>() {
                     @Override
                     public void onNextImpl(ResultEntity result) {
-                        if (result.getCode() == 1){
+                        if (result.getCode() == 1) {
                             try {
                                 LoginResultBean bean = JSON.parseObject(JSON.toJSONString(result.getData()), LoginResultBean.class);
 //                                EventBus.getDefault().post(new EventMessage("login", bean));
                                 SpUtil.putString("token", bean.getToken());
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                finish();
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
                             finish();
-                        }else{
-                            Toast.makeText(getBaseContext(),result.getMsg(),Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getBaseContext(), result.getMsg(), Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -106,8 +108,8 @@ public class LoginActivity extends BaseActivity {
                 });
     }
 
-    private void getCode(CodeBean bean) {
-        HttpUtil.getInstance().getApiService().getCode(bean)
+    private void getCode(String phone) {
+        HttpUtil.getInstance().getApiService().getCode(phone, "login")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new BaseRxObserver<ResultEntity>() {

@@ -26,13 +26,13 @@
                 android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/yellow_10_ff_6b"
                 android:paddingStart="@dimen/dp_4"
                 android:paddingTop="@dimen/dp_3"
                 android:paddingEnd="@dimen/dp_4"
                 android:paddingBottom="@dimen/dp_3"
                 android:text="自提"
                 android:textColor="@color/yellow_ff_6b"
-                android:background="@color/yellow_10_ff_6b"
                 android:textSize="@dimen/sp_10" />
 
             <TextView
@@ -223,7 +223,7 @@
     </com.noober.background.view.BLLinearLayout>
 
     <View
-        android:layout_below="@id/ll_write_off"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_8"/>
+        android:layout_height="@dimen/dp_8"
+        android:layout_below="@id/ll_write_off" />
 </RelativeLayout>

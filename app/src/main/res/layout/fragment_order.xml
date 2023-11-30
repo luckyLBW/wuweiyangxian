@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".fragment.OrderFragment">
 
+    <include layout="@layout/item_fragment_top"/>
+
     <LinearLayout
         android:id="@+id/ll_order_top"
         android:layout_width="match_parent"
@@ -20,7 +22,7 @@
 
         <EditText
             android:layout_width="0dp"
-            android:layout_height="@dimen/dp_38"
+            android:layout_height="@dimen/dp_40"
             android:layout_weight="8"
             android:drawableLeft="@mipmap/icon_order_search"
             android:gravity="center_vertical"

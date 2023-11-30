@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".fragment.HomeFragment">
 
+    <include layout="@layout/item_fragment_top"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_44"
@@ -22,6 +23,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:overScrollMode="never"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -31,6 +34,7 @@
             android:paddingBottom="@dimen/dp_40">
 
             <LinearLayout
+                android:id="@+id/ll_number_statistics"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_130"
                 android:layout_margin="@dimen/dp_12"
@@ -356,6 +360,7 @@
                         android:textSize="@dimen/sp_12" />
                 </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

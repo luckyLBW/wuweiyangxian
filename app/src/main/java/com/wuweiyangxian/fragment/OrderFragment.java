@@ -24,6 +24,7 @@ import com.wuweiyangxian.adapter.OrderAdapter;
 import com.wuweiyangxian.adapter.OrderTitleAdapter;
 import com.wuweiyangxian.bean.OrderBean;
 import com.wuweiyangxian.bean.OrderTitleBean;
+import com.wuweiyangxian.util.StatusBarUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +65,10 @@ public class OrderFragment extends Fragment {
                              Bundle savedInstanceState) {
         View inflate = inflater.inflate(R.layout.fragment_order, container, false);
         initList();
+        View top_view = inflate.findViewById(R.id.top_view);
+        ViewGroup.LayoutParams layoutParams = top_view.getLayoutParams();
+        layoutParams.height = layoutParams.height + StatusBarUtil.getStatusBarHeight(getContext());
+        top_view.setLayoutParams(layoutParams);
         ll_order_top = inflate.findViewById(R.id.ll_order_top);
         tv_write_off = inflate.findViewById(R.id.tv_write_off);
         rv_title = inflate.findViewById(R.id.rv_title);
@@ -89,7 +94,7 @@ public class OrderFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                View popupWindow_view = getLayoutInflater().inflate(R.layout.order_pop, null, false);
+                View popupWindow_view = getLayoutInflater().inflate(R.layout.pop_order, null, false);
                 // 创建PopupWindow实例,200,LayoutParams.MATCH_PARENT分别是宽度和高度
                 popupWindow = new PopupWindow(popupWindow_view, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
                 //设置可以获取焦点
