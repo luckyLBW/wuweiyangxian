@@ -25,13 +25,18 @@
         android:theme="@style/Theme.Wuweiyangxian"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <!--        超时预警-->
+        <activity
+            android:name=".activity.OvertimeWarningActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <!-- 预警设置 -->
         <activity
             android:name=".activity.WarningSettingsActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
-        <!-- 店铺预警 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 店铺预警 -->
         <activity
             android:name=".activity.StoreWarningActivity"
             android:exported="false"

@@ -105,7 +105,9 @@ public class DataStatisticsActivity extends BaseActivity implements View.OnClick
                         return false;
                     }
                 });
-
+                break;
+            case R.id.iv_back:
+                finish();
                 break;
         }
 

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,6 +74,18 @@ public class StoreWarningActivity extends BaseActivity {
     }
 
     private void adapterClick() {
+        tv_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(StoreWarningActivity.this,WarningSettingsActivity.class));
+            }
+        });
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
         adapter.setOnItemClickListener(new OrderTitleAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {

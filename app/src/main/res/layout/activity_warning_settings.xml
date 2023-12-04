@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_f9"
+    android:orientation="vertical"
+    tools:context=".activity.WarningSettingsActivity">
+
+    <include layout="@layout/base_item_title" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:drawableLeft="@mipmap/icon_waring_inventory"
+        android:drawableRight="@mipmap/icon_black_right_back"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:text="库存设置"
+        android:textColor="@color/black_33"
+        android:textSize="@dimen/sp_14"
+        app:bl_corners_radius="@dimen/dp_8"
+        app:bl_solid_color="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_time_setting"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:drawableLeft="@mipmap/icon_warning_time"
+        android:drawableRight="@mipmap/icon_black_right_back"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:text="超时设置"
+        android:textColor="@color/black_33"
+        android:textSize="@dimen/sp_14"
+        app:bl_corners_radius="@dimen/dp_8"
+        app:bl_solid_color="@color/white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:drawableLeft="@mipmap/icon_warning_food"
+        android:drawableRight="@mipmap/icon_black_right_back"
+        android:drawablePadding="@dimen/dp_4"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/dp_12"
+        android:paddingEnd="@dimen/dp_12"
+        android:text="食材设置"
+        android:textColor="@color/black_33"
+        android:textSize="@dimen/sp_14"
+        app:bl_corners_radius="@dimen/dp_8"
+        app:bl_solid_color="@color/white" />
+
+</LinearLayout>
