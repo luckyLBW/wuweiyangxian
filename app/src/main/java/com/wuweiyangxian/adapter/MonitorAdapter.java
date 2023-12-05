@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,6 +52,15 @@ public class MonitorAdapter extends RecyclerView.Adapter<MonitorAdapter.viewHold
         }
 
         Glide.with(context).load(list.get(position).getImg()).into(holder.iv_monitor);
+
+        holder.ll_monitor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (listener != null){
+                    listener.onItemClick(position);
+                }
+            }
+        });
     }
 
     @Override
@@ -61,11 +71,13 @@ public class MonitorAdapter extends RecyclerView.Adapter<MonitorAdapter.viewHold
     public class viewHolder extends RecyclerView.ViewHolder {
         private final TextView state;
         private final ImageView iv_monitor;
+        private final LinearLayout ll_monitor;
 
         public viewHolder(@NonNull View itemView) {
             super(itemView);
             state = itemView.findViewById(R.id.tv_state);
             iv_monitor = itemView.findViewById(R.id.iv_monitor);
+            ll_monitor = itemView.findViewById(R.id.ll_monitor);
         }
     }
 

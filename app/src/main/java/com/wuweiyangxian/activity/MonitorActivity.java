@@ -33,6 +33,7 @@ public class MonitorActivity extends BaseActivity {
     private TextView tv_title;
     private TextView tv_add;
     private List<MonitorBean> list;
+    private MonitorAdapter adapter;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -57,7 +58,7 @@ public class MonitorActivity extends BaseActivity {
         iv_back.setImageResource(R.mipmap.icon_black_left_back);
 
         initList();
-        MonitorAdapter adapter = new MonitorAdapter(this);
+        adapter = new MonitorAdapter(this);
         rv_monitor.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         rv_monitor.setAdapter(adapter);
         adapter.setData(list);
@@ -104,7 +105,7 @@ public class MonitorActivity extends BaseActivity {
         tv_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MonitorActivity.this,AddMonitorActivity.class));
+                startActivity(new Intent(MonitorActivity.this, AddMonitorActivity.class));
             }
         });
 
@@ -112,6 +113,13 @@ public class MonitorActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        adapter.setOnItemClickListener(new MonitorAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                startActivity(new Intent(MonitorActivity.this, MonitorDetailActivity.class).putExtra("number",position));
             }
         });
     }
