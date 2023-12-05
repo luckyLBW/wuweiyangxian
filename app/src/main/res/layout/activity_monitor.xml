@@ -68,6 +68,7 @@
                 app:bl_solid_color="@color/white" />
 
             <TextView
+                android:id="@+id/tv_add"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_40"
                 android:layout_below="@id/rv_monitor"

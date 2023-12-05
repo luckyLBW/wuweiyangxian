@@ -1,6 +1,7 @@
 package com.wuweiyangxian.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -30,6 +31,7 @@ public class MonitorActivity extends BaseActivity {
     private ImageView iv_screen;
     private ImageView iv_back;
     private TextView tv_title;
+    private TextView tv_add;
     private List<MonitorBean> list;
 
     @SuppressLint("MissingInflatedId")
@@ -49,6 +51,7 @@ public class MonitorActivity extends BaseActivity {
         iv_screen = findViewById(R.id.iv_screen);
         iv_back = findViewById(R.id.iv_back);
         tv_title = findViewById(R.id.tv_title);
+        tv_add = findViewById(R.id.tv_add);
         tv_title.setText("监控");
         tv_title.setTextColor(getColor(R.color.black));
         iv_back.setImageResource(R.mipmap.icon_black_left_back);
@@ -95,6 +98,20 @@ public class MonitorActivity extends BaseActivity {
                 });
 
 
+            }
+        });
+
+        tv_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MonitorActivity.this,AddMonitorActivity.class));
+            }
+        });
+
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }

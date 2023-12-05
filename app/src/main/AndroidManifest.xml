@@ -25,13 +25,18 @@
         android:theme="@style/Theme.Wuweiyangxian"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <!--        监控页面-->
+        <!--        添加监控-->
+        <activity
+            android:name=".activity.AddMonitorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 监控页面 -->
         <activity
             android:name=".activity.MonitorActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 钱包管理 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 钱包管理 -->
         <activity
             android:name=".activity.WalletActivity"
             android:exported="false"
