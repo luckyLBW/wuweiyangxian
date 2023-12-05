@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.wuweiyangxian.R;
 import com.wuweiyangxian.activity.DataStatisticsActivity;
+import com.wuweiyangxian.activity.MonitorActivity;
 import com.wuweiyangxian.activity.StoreWarningActivity;
+import com.wuweiyangxian.activity.WalletActivity;
 import com.wuweiyangxian.adapter.HomeShopAdapter;
 import com.wuweiyangxian.bean.HomeShopBean;
 import com.wuweiyangxian.util.StatusBarUtil;
@@ -32,6 +34,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
     private LinearLayout ll_number_statistics;
     private TextView tv_store_warning;
+    private TextView tv_wallet;
+    private TextView tv_monitor;
     private RecyclerView rv_content;
     private HomeShopAdapter adapter;
     private List list;
@@ -59,6 +63,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         initList();
         ll_number_statistics = inflate.findViewById(R.id.ll_number_statistics);
         tv_store_warning = inflate.findViewById(R.id.tv_store_warning);
+        tv_wallet = inflate.findViewById(R.id.tv_wallet);
+        tv_monitor = inflate.findViewById(R.id.tv_monitor);
         rv_content = inflate.findViewById(R.id.rv_content);
         View top_view = inflate.findViewById(R.id.top_view);
         ViewGroup.LayoutParams layoutParams = top_view.getLayoutParams();
@@ -72,6 +78,8 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
 
         ll_number_statistics.setOnClickListener(this);
         tv_store_warning.setOnClickListener(this);
+        tv_wallet.setOnClickListener(this);
+        tv_monitor.setOnClickListener(this);
         return inflate;
     }
 
@@ -114,6 +122,14 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
             case R.id.tv_store_warning:
                 //跳转店铺预警
                 startActivity(new Intent(getActivity(), StoreWarningActivity.class));
+                break;
+            case R.id.tv_wallet:
+                //跳转钱包
+                startActivity(new Intent(getActivity(), WalletActivity.class));
+                break;
+            case R.id.tv_monitor:
+                //跳转监控
+                startActivity(new Intent(getActivity(), MonitorActivity.class));
                 break;
         }
     }

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red_e6"
+    android:orientation="vertical"
+    tools:context=".activity.WalletActivity">
+
+    <include layout="@layout/base_item_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_12"
+        app:bl_corners_radius="@dimen/dp_8"
+        app:bl_solid_color="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账户余额（元）"
+            android:textColor="@color/black_33"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="34,213.42"
+            android:textColor="@color/black_33"
+            android:textSize="@dimen/sp_32"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray_f5" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_24">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_wallet_bank_card"
+                android:drawablePadding="@dimen/dp_8"
+                android:text="银行卡"
+                android:textColor="@color/black_33"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:drawableLeft="@mipmap/icon_wallet_recharge"
+                android:drawablePadding="@dimen/dp_8"
+                android:text="充值"
+                android:textColor="@color/black_33"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:drawableLeft="@mipmap/icon_wallet_bank_card"
+                android:drawablePadding="@dimen/dp_8"
+                android:text="提现"
+                android:textColor="@color/black_33"
+                android:textSize="@dimen/sp_14" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:padding="@dimen/dp_12"
+        app:bl_corners_radius="@dimen/dp_8"
+        app:bl_solid_color="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_today"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="今日预计收入（元）"
+                android:textColor="@color/black_99"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_today"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="1,213.37"
+                android:textColor="@color/black_33"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/dp_14"
+                android:text="待入帐金额（元）"
+                android:textColor="@color/black_99"
+                android:textSize="@dimen/sp_12" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_money"
+                android:layout_alignStart="@id/tv_money"
+                android:layout_marginTop="@dimen/dp_4"
+                android:text="213.37"
+                android:textColor="@color/black_33"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

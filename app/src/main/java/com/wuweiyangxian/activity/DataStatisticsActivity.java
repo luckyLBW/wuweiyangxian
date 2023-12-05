@@ -48,6 +48,7 @@ public class DataStatisticsActivity extends BaseActivity implements View.OnClick
 
         tv_channel.setOnClickListener(this);
         tv_cycle.setOnClickListener(this);
+        iv_back.setOnClickListener(this);
     }
 
     @Override

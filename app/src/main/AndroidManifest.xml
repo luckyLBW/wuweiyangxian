@@ -5,11 +5,11 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- 获取网络状态，根据网络状态切换进行数据请求网络转换 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -25,13 +25,23 @@
         android:theme="@style/Theme.Wuweiyangxian"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <!--        超时预警-->
+        <!--        监控页面-->
+        <activity
+            android:name=".activity.MonitorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 钱包管理 -->
+        <activity
+            android:name=".activity.WalletActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 超时预警 -->
         <activity
             android:name=".activity.OvertimeWarningActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 预警设置 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 预警设置 -->
         <activity
             android:name=".activity.WarningSettingsActivity"
             android:exported="false"

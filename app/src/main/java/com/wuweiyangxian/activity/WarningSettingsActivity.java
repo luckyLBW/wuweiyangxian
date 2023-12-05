@@ -49,5 +49,12 @@ public class WarningSettingsActivity extends BaseActivity {
                 startActivity(new Intent(WarningSettingsActivity.this,OvertimeWarningActivity.class));
             }
         });
+
+        iv_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 }
