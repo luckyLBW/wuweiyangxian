@@ -1,9 +1,5 @@
 package com.wuweiyangxian.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,8 +8,10 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.wuweiyangxian.R;
-import com.wuweiyangxian.adapter.OrderAdapter;
 import com.wuweiyangxian.adapter.OrderTitleAdapter;
 import com.wuweiyangxian.adapter.StoreWarningAdapter;
 import com.wuweiyangxian.bean.OrderTitleBean;
@@ -77,7 +75,7 @@ public class StoreWarningActivity extends BaseActivity {
         tv_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(StoreWarningActivity.this,WarningSettingsActivity.class));
+                startActivity(new Intent(StoreWarningActivity.this, WarningSettingsActivity.class));
             }
         });
         iv_back.setOnClickListener(new View.OnClickListener() {
@@ -103,25 +101,25 @@ public class StoreWarningActivity extends BaseActivity {
     }
 
     private void updateView(int position) {
-        if (listTitle.get(position).getName().equals("全部")){
+        if (listTitle.get(position).getName().equals("全部")) {
             rv_content.setVisibility(View.VISIBLE);
             tv_none.setVisibility(View.GONE);
             warningAdapter.setData(list);
-        }else if (listTitle.get(position).getName().equals("库存")){
+        } else if (listTitle.get(position).getName().equals("库存")) {
             rv_content.setVisibility(View.VISIBLE);
             tv_none.setVisibility(View.GONE);
             List<StoreWaringBean> list = new ArrayList<>();
             for (int i = 0; i < 3; i++) {
                 StoreWaringBean bean = new StoreWaringBean();
-                if (i == 0){
+                if (i == 0) {
                     bean.setName("库存");
                     bean.setTime("上午9:00");
                     bean.setDes("羊肉剩余已不足100份");
-                }else if (i == 1){
+                } else if (i == 1) {
                     bean.setName("库存");
                     bean.setTime("昨天");
                     bean.setDes("羊肉剩余已不足100份");
-                }else{
+                } else {
                     bean.setName("库存");
                     bean.setTime("前天");
                     bean.setDes("羊肉剩余已不足100份");
@@ -129,23 +127,23 @@ public class StoreWarningActivity extends BaseActivity {
                 list.add(bean);
             }
             warningAdapter.setData(list);
-        }else if (listTitle.get(position).getName().equals("超时")){
+        } else if (listTitle.get(position).getName().equals("超时")) {
             rv_content.setVisibility(View.VISIBLE);
             tv_none.setVisibility(View.GONE);
             List<StoreWaringBean> list = new ArrayList<>();
             for (int i = 0; i < 2; i++) {
                 StoreWaringBean bean = new StoreWaringBean();
                 bean.setName("超时");
-                if (i == 0){
+                if (i == 0) {
                     bean.setTime("上午7:00");
-                }else{
+                } else {
                     bean.setTime("上午5:43");
                 }
                 bean.setDes("羊肉剩余已不足100份");
                 list.add(bean);
             }
             warningAdapter.setData(list);
-        }else if (listTitle.get(position).getName().equals("食材")){
+        } else if (listTitle.get(position).getName().equals("食材")) {
             rv_content.setVisibility(View.VISIBLE);
             tv_none.setVisibility(View.GONE);
             List<StoreWaringBean> list = new ArrayList<>();
@@ -157,7 +155,7 @@ public class StoreWarningActivity extends BaseActivity {
                 list.add(bean);
             }
             warningAdapter.setData(list);
-        }else if (listTitle.get(position).getName().equals("监控")){
+        } else if (listTitle.get(position).getName().equals("监控")) {
             rv_content.setVisibility(View.GONE);
             tv_none.setVisibility(View.VISIBLE);
         }
@@ -189,27 +187,27 @@ public class StoreWarningActivity extends BaseActivity {
         list = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             StoreWaringBean bean = new StoreWaringBean();
-            if (i == 0){
+            if (i == 0) {
                 bean.setName("库存");
                 bean.setTime("上午9:00");
                 bean.setDes("羊肉剩余已不足100份");
-            }else if (i == 1){
+            } else if (i == 1) {
                 bean.setName("超时");
                 bean.setTime("上午7:00");
                 bean.setDes("羊肉剩余已不足100份");
-            }else if (i == 2){
+            } else if (i == 2) {
                 bean.setName("超时");
                 bean.setTime("上午5:43");
                 bean.setDes("羊肉剩余已不足100份");
-            }else if (i == 3){
+            } else if (i == 3) {
                 bean.setName("食材");
                 bean.setTime("上午3:00");
                 bean.setDes("羊肉剩余已不足100份");
-            }else if (i == 4){
+            } else if (i == 4) {
                 bean.setName("库存");
                 bean.setTime("昨天");
                 bean.setDes("羊肉剩余已不足100份");
-            }else{
+            } else {
                 bean.setName("库存");
                 bean.setTime("前天");
                 bean.setDes("羊肉剩余已不足100份");

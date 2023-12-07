@@ -1,7 +1,5 @@
 package com.wuweiyangxian.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MotionEvent;
@@ -16,7 +14,7 @@ import android.widget.TextView;
 import com.wuweiyangxian.R;
 import com.wuweiyangxian.util.StatusBarUtil;
 
-public class DataStatisticsActivity extends BaseActivity implements View.OnClickListener{
+public class DataStatisticsActivity extends BaseActivity implements View.OnClickListener {
 
     private ImageView iv_back;
     private TextView tv_title;
@@ -53,7 +51,7 @@ public class DataStatisticsActivity extends BaseActivity implements View.OnClick
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.tv_channel:
                 //渠道
                 View pop_channel = getLayoutInflater().inflate(R.layout.pop_channel, null, false);

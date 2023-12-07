@@ -56,7 +56,7 @@ public class MonitorAdapter extends RecyclerView.Adapter<MonitorAdapter.viewHold
         holder.ll_monitor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (listener != null){
+                if (listener != null) {
                     listener.onItemClick(position);
                 }
             }

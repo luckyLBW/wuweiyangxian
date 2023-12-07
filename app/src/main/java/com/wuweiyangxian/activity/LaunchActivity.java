@@ -1,7 +1,5 @@
 package com.wuweiyangxian.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -23,17 +21,17 @@ public class LaunchActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_launch);
 
-        Timer timer=new Timer();
+        Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (TextUtils.isEmpty(SpUtil.getString("token",""))) {
+                if (TextUtils.isEmpty(SpUtil.getString("token", ""))) {
                     startActivity(new Intent(LaunchActivity.this, LoginActivity.class));
-                }else {
+                } else {
                     startActivity(new Intent(LaunchActivity.this, MainActivity.class));
                 }
                 timer.cancel();
             }
-        },2000);
+        }, 2000);
     }
 }

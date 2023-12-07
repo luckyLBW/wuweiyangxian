@@ -49,7 +49,7 @@ public class PayChildAdapter extends RecyclerView.Adapter<PayChildAdapter.viewHo
         holder.rl_top.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (listener!= null){
+                if (listener != null) {
                     listener.onItemClick(position);
                 }
             }

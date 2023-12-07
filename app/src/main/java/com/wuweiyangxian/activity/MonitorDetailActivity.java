@@ -39,15 +39,15 @@ public class MonitorDetailActivity extends BaseActivity {
         tv_title.setTextColor(getColor(R.color.black));
         iv_back.setImageResource(R.mipmap.icon_black_left_back);
 
-        if (number == 0 || number == 2){
+        if (number == 0 || number == 2) {
             tv_state.setText("在线");
             tv_state.setCompoundDrawablesRelativeWithIntrinsicBounds(getDrawable(R.mipmap.icon_monitor_green), null, null, null);
-            if (number == 0){
+            if (number == 0) {
                 Glide.with(this).load(getDrawable(R.mipmap.icon_monitor_one)).into(iv_monitor);
-            }else{
+            } else {
                 Glide.with(this).load(getDrawable(R.mipmap.icon_monitor_three)).into(iv_monitor);
             }
-        }else{
+        } else {
             tv_state.setText("离线");
             tv_state.setCompoundDrawablesRelativeWithIntrinsicBounds(getDrawable(R.mipmap.icon_monitor_grey), null, null, null);
             Glide.with(this).load(getDrawable(R.mipmap.icon_monitor_two)).into(iv_monitor);

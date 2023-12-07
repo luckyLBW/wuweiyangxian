@@ -55,7 +55,7 @@ public class OrderTitleAdapter extends RecyclerView.Adapter<OrderTitleAdapter.vi
         holder.name.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (listener != null){
+                if (listener != null) {
                     listener.onItemClick(position);
                 }
             }

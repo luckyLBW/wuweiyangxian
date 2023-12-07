@@ -50,14 +50,14 @@ public class WalletActivity extends BaseActivity {
         tv_bank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WalletActivity.this,BankActivity.class));
+                startActivity(new Intent(WalletActivity.this, BankActivity.class));
             }
         });
 
         tv_right.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WalletActivity.this,PayDetailActivity.class));
+                startActivity(new Intent(WalletActivity.this, PayDetailActivity.class));
             }
         });
     }

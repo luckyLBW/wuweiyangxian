@@ -20,12 +20,10 @@ import java.util.List;
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.viewHolder> {
 
     private Context context;
-    private Activity activity;
     private List<FoodBean> list;
 
     public FoodAdapter(Context context) {
         this.context = context;
-        this.activity = activity;
         list = new ArrayList<>();
     }
 

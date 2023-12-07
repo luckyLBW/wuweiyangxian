@@ -1,35 +1,20 @@
 package com.wuweiyangxian.adapter;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.style.UnderlineSpan;
-import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.wuweiyangxian.R;
-import com.wuweiyangxian.bean.OrderBean;
 import com.wuweiyangxian.bean.StoreWaringBean;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class StoreWarningAdapter extends RecyclerView.Adapter<StoreWarningAdapter.viewHolder> {
 

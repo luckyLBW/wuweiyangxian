@@ -32,12 +32,12 @@ public class BankActivity extends BaseActivity {
         iv_back.setImageResource(R.mipmap.icon_black_left_back);
 
         iv_back.setOnClickListener(
-            new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    finish();
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        finish();
+                    }
                 }
-            }
         );
     }
 }

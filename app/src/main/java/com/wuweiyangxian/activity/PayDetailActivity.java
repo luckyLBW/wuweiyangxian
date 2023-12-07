@@ -62,7 +62,7 @@ public class PayDetailActivity extends BaseActivity {
         adapter.setOnItemClickListener(new PayDetailAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                startActivity(new Intent(PayDetailActivity.this,DetailsActivity.class));
+                startActivity(new Intent(PayDetailActivity.this, DetailsActivity.class));
             }
         });
     }
