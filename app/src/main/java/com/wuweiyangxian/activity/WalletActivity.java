@@ -1,5 +1,6 @@
 package com.wuweiyangxian.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.wuweiyangxian.util.StatusBarUtil;
 public class WalletActivity extends BaseActivity {
 
     private ImageView iv_back;
+    private TextView tv_bank;
     private TextView tv_title;
     private TextView tv_right;
 
@@ -25,6 +27,7 @@ public class WalletActivity extends BaseActivity {
         layoutParams.height = layoutParams.height + StatusBarUtil.getStatusBarHeight(getBaseContext());
         view.setLayoutParams(layoutParams);
         iv_back = findViewById(R.id.iv_back);
+        tv_bank = findViewById(R.id.tv_bank);
         tv_title = findViewById(R.id.tv_title);
         tv_right = findViewById(R.id.tv_right);
         tv_title.setText("钱包");
@@ -41,6 +44,20 @@ public class WalletActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        tv_bank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(WalletActivity.this,BankActivity.class));
+            }
+        });
+
+        tv_right.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(WalletActivity.this,PayDetailActivity.class));
             }
         });
     }

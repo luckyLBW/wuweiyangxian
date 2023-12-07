@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_f9"
+    android:orientation="vertical"
+    tools:context=".activity.BankActivity">
+
+    <include layout="@layout/base_item_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_16"
+            app:bl_corners_radius="@dimen/dp_8"
+            app:bl_solid_color="@color/blue_004">
+
+            <LinearLayout
+                android:id="@+id/ll_construction_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_19"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_bank_construction" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="建设银行"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="储蓄卡"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_construction_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="**** **** **** 8266"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:paddingStart="@dimen/dp_6"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingEnd="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_2"
+                android:text="解绑"
+                android:textColor="@color/gray_dd"
+                android:textSize="@dimen/sp_10"
+                app:bl_corners_radius="@dimen/dp_3"
+                app:bl_stroke_color="@color/gray_dd"
+                app:bl_stroke_width="@dimen/dp_1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_16"
+            app:bl_corners_radius="@dimen/dp_8"
+            app:bl_solid_color="@color/red_e6">
+
+            <LinearLayout
+                android:id="@+id/ll_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginTop="@dimen/dp_19"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon_bank_china_merchants" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_12"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="招商银行"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_16" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="储蓄卡"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_24"
+                android:text="**** **** **** 3783"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_20" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                android:paddingStart="@dimen/dp_6"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingEnd="@dimen/dp_6"
+                android:paddingBottom="@dimen/dp_2"
+                android:text="解绑"
+                android:textColor="@color/gray_dd"
+                android:textSize="@dimen/sp_10"
+                app:bl_corners_radius="@dimen/dp_3"
+                app:bl_stroke_color="@color/gray_dd"
+                app:bl_stroke_width="@dimen/dp_1" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_80"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        app:bl_corners_radius="@dimen/dp_8"
+        app:bl_solid_color="@color/gray_f5">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawableLeft="@mipmap/icon_bank_add"
+            android:drawablePadding="@dimen/dp_8"
+            android:text="添加银行卡"
+            android:textColor="@color/black_33"
+            android:textSize="@dimen/sp_16" />
+
+    </RelativeLayout>
+</LinearLayout>

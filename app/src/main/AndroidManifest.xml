@@ -25,13 +25,28 @@
         android:theme="@style/Theme.Wuweiyangxian"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <!--        监控详情-->
+        <!--        明细详情页面-->
+        <activity
+            android:name=".activity.DetailsActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 明细页面 -->
+        <activity
+            android:name=".activity.PayDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 银行卡列表 -->
+        <activity
+            android:name=".activity.BankActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 监控详情 -->
         <activity
             android:name=".activity.MonitorDetailActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 添加监控 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 添加监控 -->
         <activity
             android:name=".activity.AddMonitorActivity"
             android:exported="false"
