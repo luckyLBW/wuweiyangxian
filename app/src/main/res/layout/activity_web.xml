@@ -6,11 +6,12 @@
     tools:context=".activity.WebActivity">
 
     <include layout="@layout/base_item_title" />
+
     <WebView
         android:id="@+id/webView"
-        android:layout_below="@+id/rl_top"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/rl_top"
         android:overScrollMode="never"
         android:scrollbars="none" />
 
