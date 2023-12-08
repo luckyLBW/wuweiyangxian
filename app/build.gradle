@@ -97,4 +97,6 @@ dependencies {
     implementation 'io.github.lucksiege:compress:v3.0.9'
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
+    //前端调用相机相册
+    implementation 'com.github.shuhaoSCode:AndroidWebviewInputFile:1.0.0'
 }

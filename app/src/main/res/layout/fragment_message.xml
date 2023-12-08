@@ -3,10 +3,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/gray_f9"
     android:orientation="vertical"
     tools:context=".fragment.MessageFragment">
 
-    <include layout="@layout/item_fragment_top" />
+    <include layout="@layout/base_item_title" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/dp_8"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
 
 </LinearLayout>
