@@ -36,7 +36,7 @@ public class RuleActivity extends BaseActivity implements View.OnClickListener {
         view.setLayoutParams(layoutParams);
         iv_back = findViewById(R.id.iv_back);
         tv_title = findViewById(R.id.tv_title);
-        tv_title.setText("关于午未羊鲜");
+        tv_title.setText("规则中心");
         tv_title.setTextColor(getColor(R.color.black));
         iv_back.setImageResource(R.mipmap.icon_black_left_back);
         tv_platform = findViewById(R.id.tv_platform);

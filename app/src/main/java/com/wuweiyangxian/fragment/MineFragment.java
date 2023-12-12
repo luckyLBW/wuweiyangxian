@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.wuweiyangxian.R;
+import com.wuweiyangxian.activity.FeedbackActivity;
 import com.wuweiyangxian.activity.RuleActivity;
 
 /**
@@ -21,6 +22,7 @@ import com.wuweiyangxian.activity.RuleActivity;
 public class MineFragment extends Fragment implements View.OnClickListener {
 
     private TextView rule;
+    private TextView tv_feedback;
 
     public MineFragment() {
         // Required empty public constructor
@@ -43,8 +45,10 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View inflate = inflater.inflate(R.layout.fragment_mine, container, false);
         rule = inflate.findViewById(R.id.tv_rule);
+        tv_feedback = inflate.findViewById(R.id.tv_feedback);
 
         rule.setOnClickListener(this);
+        tv_feedback.setOnClickListener(this);
         return inflate;
     }
 
@@ -53,6 +57,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.tv_rule:
                 startActivity(new Intent(getActivity(), RuleActivity.class));
+                break;
+            case R.id.tv_feedback:
+                startActivity(new Intent(getActivity(), FeedbackActivity.class));
                 break;
         }
     }

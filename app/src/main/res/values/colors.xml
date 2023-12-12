@@ -10,6 +10,7 @@
 
     <color name="black">#FF000000</color>
     <color name="black20">#20000000</color>
+    <color name="black32">#32000000</color>
     <color name="black_33">#333333</color>
     <color name="black_99">#999999</color>
     <color name="black_66">#666666</color>
@@ -27,6 +28,7 @@
     <color name="gray_00_ef">#00EFEFEF</color>
     <color name="gray_f9">#F9F9F9</color>
     <color name="gray_cc">#CCCCCC</color>
+    <color name="gray_c8">#C8C8C8</color>
     <color name="gray_f5">#F5F5F5</color>
 
     <color name="red_e5">#E53935</color>
