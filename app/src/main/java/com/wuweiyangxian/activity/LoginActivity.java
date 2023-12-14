@@ -90,6 +90,7 @@ public class LoginActivity extends BaseActivity {
                                 LoginResultBean bean = JSON.parseObject(JSON.toJSONString(result.getData()), LoginResultBean.class);
 //                                EventBus.getDefault().post(new EventMessage("login", bean));
                                 SpUtil.putString("token", bean.getToken());
+                                SpUtil.putString("phone", bean.getUserinfo().getPhone());
                                 startActivity(new Intent(LoginActivity.this, MainActivity.class));
                                 finish();
                             } catch (Exception e) {

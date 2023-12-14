@@ -25,13 +25,28 @@
         android:theme="@style/Theme.Wuweiyangxian"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <!--        意见反馈-->
+        <!--        基本信息-->
+        <activity
+            android:name=".activity.InfoActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <!-- 权限管理 -->
+        <activity
+            android:name=".activity.PowerActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 设置页面 -->
+        <activity
+            android:name=".activity.SettingActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 意见反馈 -->
         <activity
             android:name=".activity.FeedbackActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <!-- 规则中心 -->
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- 规则中心 -->
         <activity
             android:name=".activity.RuleActivity"
             android:exported="false"

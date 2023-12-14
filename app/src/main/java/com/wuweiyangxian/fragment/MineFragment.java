@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.wuweiyangxian.R;
 import com.wuweiyangxian.activity.FeedbackActivity;
 import com.wuweiyangxian.activity.RuleActivity;
+import com.wuweiyangxian.activity.SettingActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +24,7 @@ public class MineFragment extends Fragment implements View.OnClickListener {
 
     private TextView rule;
     private TextView tv_feedback;
+    private TextView tv_setting;
 
     public MineFragment() {
         // Required empty public constructor
@@ -46,9 +48,11 @@ public class MineFragment extends Fragment implements View.OnClickListener {
         View inflate = inflater.inflate(R.layout.fragment_mine, container, false);
         rule = inflate.findViewById(R.id.tv_rule);
         tv_feedback = inflate.findViewById(R.id.tv_feedback);
+        tv_setting = inflate.findViewById(R.id.tv_setting);
 
         rule.setOnClickListener(this);
         tv_feedback.setOnClickListener(this);
+        tv_setting.setOnClickListener(this);
         return inflate;
     }
 
@@ -60,6 +64,9 @@ public class MineFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.tv_feedback:
                 startActivity(new Intent(getActivity(), FeedbackActivity.class));
+                break;
+            case R.id.tv_setting:
+                startActivity(new Intent(getActivity(), SettingActivity.class));
                 break;
         }
     }
